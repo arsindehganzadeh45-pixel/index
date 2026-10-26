@@ -46,7 +46,7 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
 <div class="wrap">
   <header>
     <h1>⚡ پنل گیمینگ سبحان</h1>
-    <p style="color:var(--muted);margin-top:6px;font-size:0.9rem">مخصوص گیم با کمترین پینگ | WireGuard | حجم کل: ۱۰ گیگ</p>
+    <p style="color:var(--muted);margin-top:6px;font-size:0.9rem">مخصوص گیم با کمترین پینگ | WireGuard | حجم کل: ۱۰,۰۰۰ گیگ</p>
     <span class="badge">مالک: سبحان</span>
   </header>
 
@@ -72,7 +72,7 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
       <div class="row">
         <div><label>روز اعتبار</label><input type="number" id="cfgDays" min="1" max="365" value="30"/></div>
         <div><label>کاربر</label><input type="number" id="cfgUsers" min="1" max="50" value="1"/></div>
-        <div><label>حجم (گیگ)</label><input type="number" id="cfgGB" min="1" max="10" value="5"/></div>
+        <div><label>حجم (گیگ)</label><input type="number" id="cfgGB" min="1" max="10000" value="50"/></div>
       </div>
       <label>نام کانفیگ (مثلا پابجی / کالاف)</label>
       <input type="text" id="cfgName" placeholder="گیمینگ سرعت بالا"/>
@@ -109,14 +109,14 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
 
 <script>
 (function(){
-  var PANEL = {"totalGB":10};
+  var PANEL = {"totalGB":10000};
   var SERVER_PUBLIC_KEY = "MDmZx7b5TEv6DbIytA8H6X4n3wrs3xQC5Kt87w8eR1Y=";
   var SOURCE_PRIVATE_KEY = "6OMXgEYISCVziLgGhZlJUIH4vWGGTcU1tJB8QGvD4mQ=";
   var SOURCE_ADDRESS = "10.88.2.191/32";
   var SOURCE_DNS = "1.1.1.1, 1.0.0.1";
   var SOURCE_MTU = 1280;
   var ENDPOINT = "gg.apple4soo.com:51820";
-  var STORAGE_KEY = "wg_panel_sobhan_gaming_9912";
+  var STORAGE_KEY = "wg_panel_sobhan_gaming_10000gb";
   var CONFIGS = [];
   var CONSUMED = 0;
   var LAST_SUB_URL = "";
@@ -224,7 +224,7 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
   }
 
   function updateStatus() {
-    var total = Number(PANEL.totalGB)||10;
+    var total = Number(PANEL.totalGB)||10000;
     var used = Math.max(0, Number(CONSUMED)||0);
     var rem = Math.max(0, total - used);
     var act = CONFIGS.filter(isActive).length;
@@ -398,11 +398,11 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
   }
 
   function createConfig() {
-    var total = Number(PANEL.totalGB)||10;
+    var total = Number(PANEL.totalGB)||10000;
     var rem = Math.max(0, total - (Number(CONSUMED)||0));
-    if (rem <= 0) { toast("⛔ حجم کل پنل (۱۰ گیگ) تمام شده است"); return; }
+    if (rem <= 0) { toast("⛔ حجم کل پنل تمام شده است"); return; }
     var days = parseInt(document.getElementById("cfgDays").value,10)||30;
-    var gb = parseInt(document.getElementById("cfgGB").value,10)||5;
+    var gb = parseInt(document.getElementById("cfgGB").value,10)||50;
     if (gb > rem) { gb = rem; toast("حجم محدود به باقیمانده: "+rem+" GB"); }
     var name = (document.getElementById("cfgName").value||"").trim();
     if (!name) name = "گیمینگ-سبحان-"+days+"روزه-"+gb+"گیگ";
