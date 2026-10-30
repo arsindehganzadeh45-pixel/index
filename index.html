@@ -74,7 +74,7 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
       </div>
       <label>نام کانفیگ (اختیاری)</label>
       <input type="text" id="cfgName" placeholder="مثلاً: گیمینگ خفن"/>
-      <div style="margin-top:12px"><button type="button" class="btn btn-p" id="btnCreate">✨ ساخت و دانلود فایل .conf</button></div>
+      <div style="margin-top:12px"><button type="button" class="btn btn-p" id="btnCreate">✨ ساخت کانفیگ و بارکد</button></div>
     </div>
   </div>
 
@@ -95,7 +95,6 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
         <button type="button" class="btn btn-p" id="btnSubLatest">🚀 لینک آخرین کانفیگ</button>
         <button type="button" class="btn btn-g" id="btnSubAll">📦 لینک همه فعال‌ها</button>
         <button type="button" class="btn btn-o" id="btnCopySub">📋 کپی لینک</button>
-        <button type="button" class="btn btn-o" id="btnCopyB64">📋 کپی Base64</button>
       </div>
       <div id="subCfgList" style="margin-top:14px"></div>
     </div>
@@ -107,12 +106,12 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
 (function(){
   var PANEL = { totalGB: 10000, endpoint: "s15.nahagebad.net:4653" };
   var SERVER_PUBLIC_KEY = "76qSLzpNLBRmM3H2aoWC+Wk7jokw";
-  var SOURCE_PRIVATE_KEY = "G0SSrssOWpmCx1maky06NI/SNP1omak...="; // کلید تصحیح شده
+  var SOURCE_PRIVATE_KEY = "G0SSrssOWpmCx1maky06NI/SNP1omak...=";
   var SOURCE_ADDRESS = "192.168.1.118/32";
   var SOURCE_DNS = "1.1.1.1";
   var SOURCE_KEEPALIVE = 25;
 
-  var STORAGE_KEY = "wg_custom_panel_10000gb_v2";
+  var STORAGE_KEY = "wg_custom_panel_10000gb_v3";
   var CONFIGS = [];
   var CONSUMED = 0;
   var LAST_SUB_URL = "";
@@ -177,8 +176,6 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
   function buildConf(name, days, gb) {
     var safe = String(name).replace(/[^\x20-\x7E]/g,"_").slice(0,40);
     var conf = [
-      "# Name = " + safe,
-      "# High-Speed Game & Web Config",
       "[Interface]",
       "PrivateKey = " + SOURCE_PRIVATE_KEY,
       "Address = " + SOURCE_ADDRESS,
@@ -188,8 +185,7 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
       "PublicKey = " + SERVER_PUBLIC_KEY,
       "AllowedIPs = 0.0.0.0/0",
       "Endpoint = " + PANEL.endpoint,
-      "PersistentKeepalive = " + SOURCE_KEEPALIVE,
-      ""
+      "PersistentKeepalive = " + SOURCE_KEEPALIVE
     ].join("\n");
     return { conf: conf };
   }
@@ -222,17 +218,16 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
       "کانفیگ‌های فعال: <strong>"+act+"</strong> / "+CONFIGS.length;
     var pct = Math.min(100, Math.round((used/total)*100));
     var fill = document.getElementById("quotaFill");
-    fill.style.width = pct+"%";
+    fill.style.width = pct+"%T";
     fill.style.background = pct>=95?"#ef4444":pct>=70?"#f59e0b":"#10b981";
   }
 
   function cfgButtons(cfg, i, on) {
     return '<div style="margin-top:8px;display:flex;flex-wrap:wrap;gap:4px">'+
       '<button type="button" class="btn '+(cfg.inSub!==false?"btn-d":"btn-s")+'" data-a="toggle" data-i="'+i+'">'+(cfg.inSub!==false?"🔴 غیرفعال":"🟢 فعال")+'</button>'+
-      '<button type="button" class="btn btn-p" data-a="dl" data-i="'+i+'"'+(on?"":" disabled")+'>⬇️ دانلود .conf</button>'+
-      '<button type="button" class="btn btn-o" data-a="copy" data-i="'+i+'"'+(on?"":" disabled")+'>📋 کپی</button>'+
-      '<button type="button" class="btn btn-o" data-a="qr" data-i="'+i+'"'+(on?"":" disabled")+'>📱 QR Code</button>'+
-      '<button type="button" class="btn btn-d" data-a="del" data-i="'+i+'">🗑️ حذف</button></div>';
+      '<button type="button" class="btn btn-p" data-a="qr" data-i="'+i+'"'+(on?"":" disabled")+'>📱 بارکد (QR)</button>'+
+      '<button type="button" class="btn btn-o" data-a="dl" data-i="'+i+'"'+(on?"":" disabled")+'>⬇️ دانلود</button>'+
+      '<button type="button" class="btn btn-d" data-a="del" data-i="'+i+'">🗑️</button></div>';
   }
 
   function renderList() {
@@ -264,13 +259,13 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
   function renderSub() {
     updateStatus();
     var box = document.getElementById("subCfgList");
-    if (!CONFIGS.length) { box.innerHTML = '<p style="color:var(--muted)">ابتدا از تب ساخت کانفیگ یک مورد ایجاد کنید</p>'; return; }
-    var html = '<strong style="color:#34d399;font-size:0.9rem">کانفیگ‌های آماده برای لینک ساب:</strong>';
+    if (!CONFIGS.length) { box.innerHTML = '<p style="color:var(--muted)">ابتدا کانفیگ بسازید</p>'; return; }
+    var html = '<strong style="color:#34d399;font-size:0.9rem">لینک‌های ساب:</strong>';
     CONFIGS.forEach(function(cfg, i) {
       var on = isActive(cfg);
       html += '<div class="cfg"><div style="display:flex;justify-content:space-between;align-items:center">'+
-        '<span>'+(cfg.name||("#"+(i+1)))+' — <span style="color:'+(on?"#86efac":"#fca5a5")+'">'+(on?"فعال":"غیرفعال")+'</span></span>'+
-        '<button type="button" class="btn btn-g" data-a="sub" data-i="'+i+'">🔗 کپی ساب Base64</button></div></div>';
+        '<span>'+(cfg.name||("#"+(i+1)))+'</span>'+
+        '<button type="button" class="btn btn-g" data-a="qr" data-i="'+i+'">📱 نمایش بارکد</button></div></div>';
     });
     box.innerHTML = html;
   }
@@ -283,7 +278,7 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
     var gb = parseInt(document.getElementById("cfgGB").value,10)||200;
     if (gb > rem) gb = rem;
     var name = (document.getElementById("cfgName").value||"").trim();
-    if (!name) name = "گیمینگ-وب-"+days+"روزه-"+gb+"گیگ";
+    if (!name) name = "گیمینگ-"+days+"روزه-"+gb+"گیگ";
     var built = buildConf(name, days, gb);
     CONFIGS.unshift({
       id: "cfg_"+Date.now().toString(36), name:name, days:days, gb:gb, usedGB:0,
@@ -292,8 +287,7 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
     CONSUMED += gb;
     save();
     renderAll();
-    downloadText(built.conf, name.replace(/\s+/g,"_")+".conf");
-    toast("✅ کانفیگ با موفقیت ساخته و دانلود شد");
+    toast("✅ کانفیگ ساخته شد. دکمه بارکد را بزنید");
     document.getElementById("cfgName").value = "";
     switchTab("configs");
   }
@@ -303,43 +297,30 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
     if (!cfg) return;
     if (a === "dl") {
       downloadText(cfg.confText, (cfg.name||"config").replace(/\s+/g,"_")+".conf");
-    } else if (a === "copy") {
-      copyText(cfg.confText||"");
     } else if (a === "qr") {
-      window.open("https://api.qrserver.com/v1/create-qr-code/?size=250x250&data="+encodeURIComponent((cfg.confText||"").slice(0,1200)), "_blank");
+      var qrWindow = window.open("", "_blank");
+      if(qrWindow) {
+        qrWindow.document.write('<html><head><title>بارکد کانفیگ</title></head><body style="background:#0f172a;color:#fff;text-align:center;font-family:Tahoma;padding:30px;">'+
+          '<h2>بارکد کانفیگ: '+(cfg.name||"")+'</h2>'+
+          '<p style="color:#94a3b8;margin-bottom:20px;">با برنامه WireGuard برنامه را اسکن کنید</p>'+
+          '<div style="background:#fff;display:inline-block;padding:15px;border-radius:12px;">'+
+          '<img src="https://api.qrserver.com/v1/create-qr-code/?size=280x280&data='+encodeURIComponent(cfg.confText)+'" width="280" height="280"/>'+
+          '</div></body></html>');
+      }
     } else if (a === "toggle") {
       cfg.inSub = !(cfg.inSub !== false);
       save(); renderAll();
     } else if (a === "del") {
-      if (!confirm("آیا از حذف این کانفیگ مطمئن هستید؟")) return;
+      if (!confirm("حذف شود؟")) return;
       CONFIGS.splice(i,1); save(); renderAll(); toast("🗑️ حذف شد");
-    } else if (a === "sub") {
-      var b64 = btoa(unescape(encodeURIComponent(cfg.confText)));
-      copyText("data:text/plain;base64," + b64);
-      toast("✅ لینک ساب Base64 کپی شد");
     }
   }
 
   function renderAll() { renderList(); renderDash(); renderSub(); updateStatus(); }
 
   document.getElementById("btnCreate").addEventListener("click", createConfig);
-  document.getElementById("btnSubLatest").addEventListener("click", function(){ if(CONFIGS.length) handleAction("sub", 0); else toast("کانفیگی وجود ندارد"); });
-  document.getElementById("btnSubAll").addEventListener("click", function(){
-    var list = CONFIGS.filter(isActive);
-    if (!list.length) { toast("کانفیگ فعالی وجود ندارد"); return; }
-    var body = list.map(function(c){ return c.confText; }).join("\n\n");
-    copyText(btoa(unescape(encodeURIComponent(body))));
-    toast("✅ ساب همه کانفیگ‌ها کپی شد");
-  });
-  document.getElementById("btnCopySub").addEventListener("click", function(){
-    if(CONFIGS.length) handleAction("sub", 0); else toast("کانفیگی وجود ندارد");
-  });
-  document.getElementById("btnCopyB64").addEventListener("click", function(){
-    var list = CONFIGS.filter(isActive);
-    if (!list.length) { toast("کانفیگ فعالی وجود ندارد"); return; }
-    var body = list.map(function(c){ return c.confText; }).join("\n\n");
-    copyText(btoa(unescape(encodeURIComponent(body))));
-  });
+  document.getElementById("btnSubLatest").addEventListener("click", function(){ if(CONFIGS.length) handleAction("qr", 0); else toast("کانفیگی نیست"); });
+  document.getElementById("btnSubAll").addEventListener("click", function(){ toast("برای اسکن، روی دکمه بارکد هر کانفیگ بزنید"); });
 
   document.body.addEventListener("click", function(e){
     var btn = e.target.closest("button[data-a]");
@@ -351,8 +332,7 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
 
   load();
   renderAll();
-  toast("⚡ پنل ۱۰,۰۰۰ گیگابایتی آماده است!");
-})();
+  })();
 </script>
 </body>
 </html>
