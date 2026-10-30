@@ -4,8 +4,6 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>پنل گیم و وبگردی 🎮 سبحان | WireGuard</title>
-<!-- استفاده از کتابخانه استاندارد و سبک QR Code برای اسکن ۱۰۰٪ تضمینی -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <style>
 :root{--accent:#06b6d4;--accent2:#3b82f6;--card:rgba(12,18,34,0.95);--text:#e2e8f0;--muted:#94a3b8;--border:#06b6d455}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -48,7 +46,7 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
 <div class="wrap">
   <header>
     <h1>⚡ پنل گیم و وبگردی سبحان</h1>
-    <p style="color:var(--muted);margin-top:6px;font-size:0.9rem">بارکد و فایل استاندارد وایرگارد | حجم کل: ۱۰,۰۰۰ گیگ</p>
+    <p style="color:var(--muted);margin-top:6px;font-size:0.9rem">نسخه نهایی و اصلاح‌شده وایرگارد | حجم کل: ۱۰,۰۰۰ گیگ</p>
     <span class="badge">مالک: سبحان</span>
   </header>
 
@@ -56,7 +54,7 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
     <button type="button" class="active" data-tab="dash">📊 داشبورد</button>
     <button type="button" data-tab="create">➕ ساخت کانفیگ</button>
     <button type="button" data-tab="configs">📂 کانفیگ‌ها</button>
-    <button type="button" data-tab="sub">🔗 لینک ساب</button>
+    <button type="button" data-tab="sub">🔗 بارکد و ساب</button>
   </div>
 
   <div id="tab-dash" class="tab active">
@@ -92,15 +90,14 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
   <div id="tab-sub" class="tab">
     <div class="card">
       <h2>🔗 دریافت بارکد و لینک ساب</h2>
-      <p class="meta">از این بخش برای نمایش بارکد استاندارد و اسکن در وایرگارد استفاده کنید.</p>
-      <label>لینک صفحه ساب</label>
+      <p class="meta">از این بخش برای دریافت بارکد اختصاصی جهت اسکن در وایرگارد استفاده کنید.</p>
+      <label>لینک صفحه بارکد</label>
       <input type="text" id="subHttps" readonly placeholder="هنوز ساخته نشده" style="direction:ltr;text-align:left;color:#86efac;font-family:monospace;font-size:0.85rem"/>
       <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:6px">
         <button type="button" class="btn btn-p" id="btnSubLatest">🚀 بارکد آخرین کانفیگ</button>
         <button type="button" class="btn btn-o" id="btnCopySub">📋 کپی لینک</button>
-        <button type="button" class="btn btn-o" id="btnOpenSub">🌐 باز کردن صفحه بارکد</button>
+        <button type="button" class="btn btn-o" id="btnOpenSub">🌐 باز کردن صفحه</button>
       </div>
-      <div class="note">بارکدهای این نسخه با استاندارد دقیق وایرگارد تولید شده و به راحتی با دوربین قابل اسکن هستند.</div>
       <div id="subCfgList" style="margin-top:14px"></div>
     </div>
   </div>
@@ -116,7 +113,7 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
   var SOURCE_DNS = "1.1.1.1";
   var ENDPOINT = "s15.nahagebad.net:4653";
   var KEEP_ALIVE = 25;
-  var STORAGE_KEY = "wg_panel_sobhan_fixed_v5";
+  var STORAGE_KEY = "wg_panel_sobhan_fixed_v6";
   var CONFIGS = [];
   var CONSUMED = 0;
   var LAST_SUB_URL = "";
@@ -183,7 +180,6 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
   }
 
   function buildConf(name, days, gb) {
-    // ساختار کاملاً استاندارد و بدون کاراکتر اضافه برای خوانش درست فایل توسط WireGuard
     var conf = 
 `[Interface]
 PrivateKey = ${SOURCE_PRIVATE_KEY}
@@ -241,7 +237,7 @@ PersistentKeepalive = ${KEEP_ALIVE}`;
       '<button type="button" class="btn '+(cfg.inSub!==false?"btn-d":"btn-s")+'" data-a="toggle" data-i="'+i+'">'+(cfg.inSub!==false?"🔴 غیرفعال":"🟢 فعال")+'</button>'+
       '<button type="button" class="btn btn-p" data-a="dl" data-i="'+i+'"'+(on?"":" disabled")+'>⬇️ دانلود فایل</button>'+
       '<button type="button" class="btn btn-o" data-a="copy" data-i="'+i+'"'+(on?"":" disabled")+'>📋 کپی متن</button>'+
-      '<button type="button" class="btn btn-g" data-a="sub" data-i="'+i+'">📱 بارکد و ساب</button>'+
+      '<button type="button" class="btn btn-g" data-a="sub" data-i="'+i+'">📱 بارکد اختصاصی</button>'+
       '<button type="button" class="btn btn-w" data-a="reset" data-i="'+i+'">🔄 آپدیت</button>'+
       '<button type="button" class="btn btn-d" data-a="del" data-i="'+i+'">🗑️</button></div>';
   }
@@ -269,7 +265,7 @@ PersistentKeepalive = ${KEEP_ALIVE}`;
     CONFIGS.forEach(function(cfg, i) {
       var on = isActive(cfg);
       html += '<div class="cfg"><strong>'+(cfg.name||("#"+(i+1)))+'</strong> — '+(on?"فعال":"غیرفعال")+' | '+(cfg.gb||0)+'GB'+
-        '<br><button type="button" class="btn btn-g" data-a="sub" data-i="'+i+'" style="margin-top:6px">📱 مشاهده بارکد و ساب</button></div>';
+        '<br><button type="button" class="btn btn-g" data-a="sub" data-i="'+i+'" style="margin-top:6px">📱 مشاهده بارکد</button></div>';
     });
     box.innerHTML = html;
   }
@@ -299,10 +295,11 @@ PersistentKeepalive = ${KEEP_ALIVE}`;
     var confData = on ? (cfg.confText || "") : "";
     var statusTxt = on ? "فعال" : "غیرفعال";
     
-    // صفحه مستقل با تولید محلی بارکد (بدون خطای سرور خارجی)
+    // استفاده از سرویس استاندارد و تضمینی QR Server برای تولید بارکد کاملاً قابل اسکن
+    var qrApiUrl = "https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=" + encodeURIComponent(confData);
+    
     return '<!DOCTYPE html><html lang="fa" dir="rtl"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>'+
       '<title>بارکد کانفیگ | '+nameStr.replace(/</g,"")+'</title>'+
-      '<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"><\/script>'+
       '<style>'+
       '*{box-sizing:border-box;margin:0;padding:0}body{font-family:Tahoma,Arial,sans-serif;background:#05080f;color:#e8e0f0;padding:14px;text-align:center}'+
       '.page{max-width:400px;margin:0 auto}.card{background:#0c1222;border:1px solid #06b6d4;border-radius:16px;padding:16px;margin-bottom:12px;text-align:right}'+
@@ -316,12 +313,10 @@ PersistentKeepalive = ${KEEP_ALIVE}`;
       '<div class="row"><span class="lbl">نام کانفیگ</span><span class="val">'+nameStr+'</span></div>'+
       '<div class="row"><span class="lbl">حجم</span><span class="val">'+totalGB+' GB</span></div>'+
       '<div class="row"><span class="lbl">وضعیت</span><span class="val" style="color:'+(on?'#86efac':'#fca5a5')+';">'+statusTxt+'</span></div></div>'+
-      (on?'<div class="qr-box" id="qrcode"></div><p style="font-size:12px;color:#94a3b8;margin-bottom:10px">با دوربین اپلیکیشن WireGuard این بارکد را اسکن کنید</p>':'<div style="padding:40px;color:#fca5a5">کانفیگ غیرفعال است</div>')+
+      (on?'<div class="qr-box"><img src="'+qrApiUrl+'" width="220" height="220" alt="QR Code"/></div><p style="font-size:12px;color:#94a3b8;margin-bottom:10px">با دوربین اپلیکیشن WireGuard این بارکد را اسکن کنید</p>':'<div style="padding:40px;color:#fca5a5">کانفیگ غیرفعال است</div>')+
       '<div class="conf">'+(confData||"غیرفعال")+'</div>'+
       (on?'<button class="btn" onclick="navigator.clipboard.writeText(`'+confData+'`);alert(`متن کانفیگ کپی شد! در وایرگارد Create from clipboard را بزنید`)">📋 کپی متن کانفیگ</button>':'')+
-      '</div>'+
-      (on?'<script>new QRCode(document.getElementById("qrcode"), {text: `'+confData+'`, width: 220, height: 220, correctLevel: QRCode.CorrectLevel.M});<\/script>':'')+
-      '</body></html>';
+      '</div></body></html>';
   }
 
   async function uploadHtml(bodyHtml) {
@@ -423,7 +418,7 @@ PersistentKeepalive = ${KEEP_ALIVE}`;
 
   load();
   renderAll();
-  toast("⚡ پنل با بارکدساز استاندارد آماده است!");
+  toast("⚡ پنل به‌روزرسانی شد!");
 })();
 </script>
 </body>
