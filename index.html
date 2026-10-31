@@ -3,63 +3,61 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>پنل گیم و وبگردی 🎮 سبحان | WireGuard</title>
+<title>پنل 🇹🇷 ترکیه (استانبول) | ZAKI GAMING</title>
 <style>
-:root{--accent:#06b6d4;--accent2:#3b82f6;--card:rgba(12,18,34,0.95);--text:#e2e8f0;--muted:#94a3b8;--border:#06b6d455}
+:root{--accent:#f59e0b;--accent2:#ec4899;--card:rgba(15,23,42,0.95);--text:#e2e8f0;--muted:#94a3b8;--border:#f59e0b55}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Tahoma,"Segoe UI",sans-serif;background:linear-gradient(145deg,#05080f,#0c1222);color:var(--text);min-height:100vh;line-height:1.65;padding:14px}
+body{font-family:Tahoma,"Segoe UI",sans-serif;background:linear-gradient(145deg,#020617,#0f172a);color:var(--text);min-height:100vh;line-height:1.65;padding:14px}
 .wrap{max-width:780px;margin:0 auto}
 header{text-align:center;padding:18px;background:var(--card);border:1px solid var(--border);border-radius:16px;margin-bottom:12px}
 header h1{font-size:1.3rem;background:linear-gradient(90deg,var(--accent),#60a5fa,var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .badge{display:inline-block;margin-top:8px;padding:4px 12px;border:1px solid var(--accent);border-radius:999px;font-size:0.75rem;color:var(--accent)}
 .nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:12px}
 .nav button{padding:10px 16px;border:1px solid var(--border);background:var(--card);color:var(--text);border-radius:12px;cursor:pointer;font-weight:700;font-size:0.88rem;font-family:inherit}
-.nav button.active,.nav button:hover{background:linear-gradient(135deg,#06b6d433,#3b82f628);border-color:var(--accent)}
+.nav button.active,.nav button:hover{background:linear-gradient(135deg,#f59e0b33,#ec489928);border-color:var(--accent)}
 .tab{display:none}.tab.active{display:block}
 .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:12px}
 .card h2{font-size:1.05rem;color:var(--accent);margin-bottom:10px}
 label{display:block;font-size:0.82rem;color:var(--muted);margin:8px 0 4px}
-input,textarea{width:100%;padding:10px;background:#0a1020;border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:0.95rem}
+input,textarea{width:100%;padding:10px;background:#020617;border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:0.95rem}
 textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;text-align:left}
 .row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
 @media(max-width:600px){.row{grid-template-columns:1fr}}
 .btn{padding:11px 14px;border:none;border-radius:10px;font-weight:700;cursor:pointer;font-family:inherit;font-size:0.86rem;margin:3px;display:inline-flex;align-items:center;gap:5px}
 .btn:disabled{opacity:0.45;cursor:not-allowed}
-.btn-p{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#05080f}
+.btn-p{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#020617}
 .btn-o{background:transparent;border:1px solid var(--border);color:var(--text)}
 .btn-d{background:rgba(239,68,68,0.15);border:1px solid #ef4444;color:#fca5a5}
 .btn-s{background:rgba(34,197,94,0.15);border:1px solid #22c55e;color:#86efac}
-.btn-w{background:rgba(245,158,11,0.15);border:1px solid #f59e0b;color:#fcd34d}
-.btn-g{background:linear-gradient(135deg,#f43f5e,#fb923c);color:#fff}
-.cfg{background:rgba(10,16,32,0.8);border-radius:12px;padding:12px;margin:10px 0;border:1px solid rgba(255,255,255,0.08)}
+.btn-g{background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff}
+.cfg{background:rgba(2,6,23,0.8);border-radius:12px;padding:12px;margin:10px 0;border:1px solid rgba(255,255,255,0.08)}
 .cfg strong{color:var(--accent)}
 .meta{font-size:0.84rem;color:var(--muted);line-height:1.8}
-.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(80px);background:#0a1220;border:1px solid var(--accent);padding:12px 18px;border-radius:12px;z-index:99;opacity:0;transition:0.3s;font-weight:600;max-width:90%;text-align:center}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(80px);background:#020617;border:1px solid var(--accent);padding:12px 18px;border-radius:12px;z-index:99;opacity:0;transition:0.3s;font-weight:600;max-width:90%;text-align:center}
 .toast.show{transform:translateX(-50%) translateY(0);opacity:1}
 .quota{height:8px;border-radius:999px;background:#0f172a;overflow:hidden;margin-top:6px;border:1px solid rgba(255,255,255,0.08)}
 .quota>div{height:100%;border-radius:999px}
-.owner{color:#38bdf8;font-size:0.85rem;font-weight:700}
-.note{font-size:0.78rem;color:var(--muted);margin-top:10px;padding:10px;background:rgba(6,182,212,0.1);border-radius:8px;border-right:3px solid #06b6d4}
+.owner{color:#f472b6;font-size:0.85rem;font-weight:700}
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <h1>⚡ پنل گیم و وبگردی سبحان</h1>
-    <p style="color:var(--muted);margin-top:6px;font-size:0.9rem">نسخه نهایی و اصلاح‌شده وایرگارد | حجم کل: ۱۰,۰۰۰ گیگ</p>
-    <span class="badge">مالک: سبحان</span>
+    <h1>🇹🇷 پنل گیمینگ 𖤍 ZAKI GAMING</h1>
+    <p style="color:var(--muted);margin-top:6px;font-size:0.9rem">سرور ترکیه (استانبول) | پینگ فوق‌العاده پایین | ظرفیت کل: ۵۰۰ گیگابایت</p>
+    <span class="badge">REG-TR-MVWBXCVY-W4JJ9K6Z</span>
   </header>
 
   <div class="nav">
     <button type="button" class="active" data-tab="dash">📊 داشبورد</button>
-    <button type="button" data-tab="create">➕ ساخت کانفیگ</button>
+    <button type="button" data-tab="create">➕ ساخت کانفیگ گیمینگ</button>
     <button type="button" data-tab="configs">📂 کانفیگ‌ها</button>
-    <button type="button" data-tab="sub">🔗 بارکد و ساب</button>
+    <button type="button" data-tab="sub">🔗 لینک ساب</button>
   </div>
 
   <div id="tab-dash" class="tab active">
     <div class="card">
-      <h2>📊 داشبورد پنل سبحان</h2>
+      <h2>📊 وضعیت کل پنل</h2>
       <div class="meta" id="statusMeta">...</div>
       <div class="quota"><div id="quotaFill" style="width:0%"></div></div>
       <div id="dashList" style="margin-top:12px"></div>
@@ -68,15 +66,15 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
 
   <div id="tab-create" class="tab">
     <div class="card">
-      <h2>➕ ساخت کانفیگ جدید</h2>
+      <h2>➕ ساخت کانفیگ جدید پابجی / بازی</h2>
       <div class="row">
-        <div><label>روز اعتبار</label><input type="number" id="cfgDays" min="1" max="365" value="30"/></div>
+        <div><label>روز اعتبار</label><input type="number" id="cfgDays" min="1" max="500" value="500"/></div>
         <div><label>کاربر</label><input type="number" id="cfgUsers" min="1" max="50" value="1"/></div>
-        <div><label>حجم (گیگ)</label><input type="number" id="cfgGB" min="1" max="10000" value="50"/></div>
+        <div><label>حجم (گیگ)</label><input type="number" id="cfgGB" min="1" max="500" value="50"/></div>
       </div>
-      <label>نام کانفیگ</label>
-      <input type="text" id="cfgName" placeholder="Gaming_Sobhan"/>
-      <div style="margin-top:12px"><button type="button" class="btn btn-p" id="btnCreate">✨ ساخت + دانلود فایل</button></div>
+      <label>نام کانفیگ (اختیاری)</label>
+      <input type="text" id="cfgName" placeholder="ZAKI-Gaming-TR"/>
+      <div style="margin-top:12px"><button type="button" class="btn btn-p" id="btnCreate">✨ ساخت + دانلود فایل Conf</button></div>
     </div>
   </div>
 
@@ -89,14 +87,13 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
 
   <div id="tab-sub" class="tab">
     <div class="card">
-      <h2>🔗 دریافت بارکد و لینک ساب</h2>
-      <p class="meta">از این بخش برای دریافت بارکد اختصاصی جهت اسکن در وایرگارد استفاده کنید.</p>
-      <label>لینک صفحه بارکد</label>
+      <h2>🔗 دریافت لینک اشتراک (Subscription)</h2>
+      <label>لینک ساب HTTPS</label>
       <input type="text" id="subHttps" readonly placeholder="هنوز ساخته نشده" style="direction:ltr;text-align:left;color:#86efac;font-family:monospace;font-size:0.85rem"/>
       <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:6px">
-        <button type="button" class="btn btn-p" id="btnSubLatest">🚀 بارکد آخرین کانفیگ</button>
+        <button type="button" class="btn btn-p" id="btnSubLatest">🚀 ساخت لینک آخرین کانفیگ</button>
         <button type="button" class="btn btn-o" id="btnCopySub">📋 کپی لینک</button>
-        <button type="button" class="btn btn-o" id="btnOpenSub">🌐 باز کردن صفحه</button>
+        <button type="button" class="btn btn-o" id="btnOpenSub">🌐 باز کردن صفحه ساب</button>
       </div>
       <div id="subCfgList" style="margin-top:14px"></div>
     </div>
@@ -106,14 +103,11 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
 
 <script>
 (function(){
-  var PANEL = {"totalGB":10000};
-  var SOURCE_PRIVATE_KEY = "6OMXgEYISCVziLgGhZlJUIH4vWGGTcU1tJB8QGvD4mQ=";
-  var SERVER_PUBLIC_KEY = "76qSLzpNLBRmM3H2aoWC+Wk7jokw";
-  var SOURCE_ADDRESS = "192.168.1.118/32";
-  var SOURCE_DNS = "1.1.1.1";
-  var ENDPOINT = "s15.nahagebad.net:4653";
-  var KEEP_ALIVE = 25;
-  var STORAGE_KEY = "wg_panel_sobhan_fixed_v6";
+  var PANEL = {totalGB: 500, endpoint: "78.135.79.205:30891"};
+  var SERVER_PUBLIC_KEY = "4Don/yrIYYdqt1u4LocXfDrLNYo3NbCaV1nPTm2wDmM=";
+  var SOURCE_DNS = "95.0.35.45, 8.8.8.8";
+  var SOURCE_MTU = 1280;
+  var STORAGE_KEY = "wg_panel_zaki_gaming_500gb";
   var CONFIGS = [];
   var CONSUMED = 0;
   var LAST_SUB_URL = "";
@@ -160,8 +154,22 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
       if (typeof c.usedGB === "undefined") c.usedGB = 0;
     });
   }
+
   function save() {
     localStorage.setItem(STORAGE_KEY, JSON.stringify({ configs: CONFIGS, consumedGB: CONSUMED, httpsSubUrl: LAST_SUB_URL }));
+  }
+
+  function toB64(buf) {
+    var b = new Uint8Array(buf), s = "";
+    for (var i = 0; i < b.length; i++) s += String.fromCharCode(b[i]);
+    return btoa(s);
+  }
+
+  function genKeys() {
+    var p = new Uint8Array(32);
+    crypto.getRandomValues(p);
+    p[0] &= 248; p[31] &= 127; p[31] |= 64;
+    return toB64(p);
   }
 
   function remainingDays(cfg) {
@@ -173,6 +181,7 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
     var left = Math.ceil((endMs - Date.now()) / 86400000);
     return left > 0 ? left : 0;
   }
+
   function isActive(cfg) {
     if (!cfg || cfg.inSub === false) return false;
     if (remainingDays(cfg) <= 0) return false;
@@ -180,28 +189,36 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
   }
 
   function buildConf(name, days, gb) {
-    var conf = 
-`[Interface]
-PrivateKey = ${SOURCE_PRIVATE_KEY}
-Address = ${SOURCE_ADDRESS}
-DNS = ${SOURCE_DNS}
-
-[Peer]
-PublicKey = ${SERVER_PUBLIC_KEY}
-AllowedIPs = 0.0.0.0/0
-Endpoint = ${ENDPOINT}
-PersistentKeepalive = ${KEEP_ALIVE}`;
-    return { conf: conf, endpoint: ENDPOINT, dns: SOURCE_DNS, privateKey: SOURCE_PRIVATE_KEY };
+    var privKey = genKeys();
+    var ipAddr = "10.10." + Math.floor(10 + Math.random()*200) + "." + Math.floor(10 + Math.random()*200) + "/32";
+    var safe = String(name).replace(/[^\x20-\x7E]/g,"_").slice(0,40);
+    var conf = [
+      "# 𖤍 ZAKI GAMING · HEADSHOT-MAX · LOW-JITTER",
+      "# Name: "+safe,
+      "# Volume: "+gb+"GB",
+      "# Time: "+days+" days",
+      "",
+      "[Interface]",
+      "PrivateKey = "+privKey,
+      "Address = "+ipAddr,
+      "DNS = "+SOURCE_DNS,
+      "MTU = "+SOURCE_MTU,
+      "",
+      "[Peer]",
+      "PublicKey = "+SERVER_PUBLIC_KEY,
+      "AllowedIPs = 0.0.0.0/0",
+      "Endpoint = "+PANEL.endpoint,
+      "PersistentKeepalive = 10",
+      ""
+    ].join("\n");
+    return { conf: conf, privateKey: privKey };
   }
 
   function downloadText(text, filename) {
-    var blob = new Blob([text], { type: "text/plain;charset=utf-8" });
     var a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = filename.endsWith(".conf") ? filename : filename + ".conf";
-    document.body.appendChild(a); 
-    a.click(); 
-    document.body.removeChild(a);
+    a.href = URL.createObjectURL(new Blob([text], { type: "application/octet-stream" }));
+    a.download = filename;
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
   }
 
   function copyText(text) {
@@ -209,6 +226,7 @@ PersistentKeepalive = ${KEEP_ALIVE}`;
       navigator.clipboard.writeText(text).then(function(){ toast("✅ کپی شد"); }).catch(function(){ fallback(text); });
     else fallback(text);
   }
+
   function fallback(text) {
     var ta = document.createElement("textarea"); ta.value = text; document.body.appendChild(ta); ta.select();
     try { document.execCommand("copy"); toast("✅ کپی شد"); } catch(e) { toast("❌ کپی نشد"); }
@@ -216,18 +234,18 @@ PersistentKeepalive = ${KEEP_ALIVE}`;
   }
 
   function updateStatus() {
-    var total = Number(PANEL.totalGB)||10000;
+    var total = Number(PANEL.totalGB)||500;
     var used = Math.max(0, Number(CONSUMED)||0);
     var rem = Math.max(0, total - used);
     var act = CONFIGS.filter(isActive).length;
     document.getElementById("statusMeta").innerHTML =
-      "حجم کل پنل: <strong style='color:#38bdf8'>"+total+" GB</strong><br>"+
-      "مصرف شده: <strong style='color:#fca5a5'>"+used+"</strong> / "+total+" GB — باقی‌مانده: <strong style='color:#86efac'>"+rem+"</strong> GB<br>"+
-      "کانفیگ فعال: <strong>"+act+"</strong> / "+CONFIGS.length+"<br><span class='owner'>مالک: سبحان</span>";
+      "ظرفیت کل پنل: <strong style='color:#f59e0b'>"+total+" GB</strong><br>"+
+      "حجم مصرف شده: <strong style='color:#86efac'>"+used+"</strong> / "+total+" GB — باقی‌مانده: <strong>"+rem+"</strong> GB<br>"+
+      "کانفیگ‌های فعال: <strong>"+act+"</strong> / "+CONFIGS.length;
     var pct = Math.min(100, Math.round((used/total)*100));
     var fill = document.getElementById("quotaFill");
-    fill.style.width = pct+"%";
-    fill.style.background = pct>=95?"#ef4444":pct>=70?"#f59e0b":"#06b6d4";
+    fill.style.width = pct+"% ";
+    fill.style.background = pct>=95?"#ef4444":pct>=70?"#f59e0b":"#3b82f6";
     var btn = document.getElementById("btnCreate");
     if (btn) btn.disabled = rem <= 0;
   }
@@ -235,10 +253,9 @@ PersistentKeepalive = ${KEEP_ALIVE}`;
   function cfgButtons(cfg, i, on) {
     return '<div style="margin-top:8px;display:flex;flex-wrap:wrap;gap:4px">'+
       '<button type="button" class="btn '+(cfg.inSub!==false?"btn-d":"btn-s")+'" data-a="toggle" data-i="'+i+'">'+(cfg.inSub!==false?"🔴 غیرفعال":"🟢 فعال")+'</button>'+
-      '<button type="button" class="btn btn-p" data-a="dl" data-i="'+i+'"'+(on?"":" disabled")+'>⬇️ دانلود فایل</button>'+
-      '<button type="button" class="btn btn-o" data-a="copy" data-i="'+i+'"'+(on?"":" disabled")+'>📋 کپی متن</button>'+
-      '<button type="button" class="btn btn-g" data-a="sub" data-i="'+i+'">📱 بارکد اختصاصی</button>'+
-      '<button type="button" class="btn btn-w" data-a="reset" data-i="'+i+'">🔄 آپدیت</button>'+
+      '<button type="button" class="btn btn-p" data-a="dl" data-i="'+i+'"'+(on?"":" disabled")+'>⬇️ دانلود</button>'+
+      '<button type="button" class="btn btn-o" data-a="copy" data-i="'+i+'"'+(on?"":" disabled")+'>📋 کپی</button>'+
+      '<button type="button" class="btn btn-g" data-a="sub" data-i="'+i+'">🔗 لینک ساب</button>'+
       '<button type="button" class="btn btn-d" data-a="del" data-i="'+i+'">🗑️</button></div>';
   }
 
@@ -250,8 +267,8 @@ PersistentKeepalive = ${KEEP_ALIVE}`;
     CONFIGS.forEach(function(cfg, i) {
       var on = isActive(cfg);
       var left = remainingDays(cfg);
-      var st = on ? "فعال" : (cfg.inSub===false?"غیرفعال":(left<=0?"منقضی":"حجم تمام"));
-      html += '<div class="cfg" style="opacity:'+(on?1:0.55)+'"><strong>⚡ '+(cfg.name||("#"+(i+1)))+'</strong> <span style="font-size:0.75rem;color:'+(on?"#86efac":"#fca5a5")+'">● '+st+'</span><br>'+
+      var st = on ? "فعال (گیمینگ)" : "غیرفعال/منقضی";
+      html += '<div class="cfg" style="opacity:'+(on?1:0.55)+'"><strong>🎮 '+(cfg.name||("#"+(i+1)))+'</strong> <span style="font-size:0.75rem;color:'+(on?"#86efac":"#fca5a5")+'">● '+st+'</span><br>'+
         '<span style="font-size:0.82rem;color:var(--muted)">'+(cfg.days||0)+' روز • باقی‌مانده: '+left+' روز • '+(cfg.gb||0)+' گیگ</span>'+cfgButtons(cfg,i,on)+'</div>';
     });
     list.innerHTML = html;
@@ -265,7 +282,7 @@ PersistentKeepalive = ${KEEP_ALIVE}`;
     CONFIGS.forEach(function(cfg, i) {
       var on = isActive(cfg);
       html += '<div class="cfg"><strong>'+(cfg.name||("#"+(i+1)))+'</strong> — '+(on?"فعال":"غیرفعال")+' | '+(cfg.gb||0)+'GB'+
-        '<br><button type="button" class="btn btn-g" data-a="sub" data-i="'+i+'" style="margin-top:6px">📱 مشاهده بارکد</button></div>';
+        '<br><button type="button" class="btn btn-g" data-a="sub" data-i="'+i+'" style="margin-top:6px">🔗 دریافت لینک ساب</button></div>';
     });
     box.innerHTML = html;
   }
@@ -276,12 +293,11 @@ PersistentKeepalive = ${KEEP_ALIVE}`;
     if (el) { el.value = LAST_SUB_URL || ""; el.placeholder = LAST_SUB_URL ? "" : "هنوز ساخته نشده"; }
     var box = document.getElementById("subCfgList");
     if (!CONFIGS.length) { box.innerHTML = '<p style="color:var(--muted)">ابتدا کانفیگ بسازید</p>'; return; }
-    var html = '<strong style="color:var(--accent);font-size:0.9rem">لینک بارکد برای هر کانفیگ:</strong>';
+    var html = '<strong style="color:var(--accent);font-size:0.9rem">لیست لینک‌های اشتراک:</strong>';
     CONFIGS.forEach(function(cfg, i) {
-      var on = isActive(cfg);
       html += '<div class="cfg"><div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;align-items:center">'+
-        '<span>'+(cfg.name||("#"+(i+1)))+' — <span style="color:'+(on?"#86efac":"#fca5a5")+'">'+(on?"فعال":"غیرفعال")+'</span></span>'+
-        '<button type="button" class="btn btn-g" data-a="sub" data-i="'+i+'">📱 ساخت بارکد</button></div>'+
+        '<span>'+(cfg.name||("#"+(i+1)))+'</span>'+
+        '<button type="button" class="btn btn-g" data-a="sub" data-i="'+i+'">🔗 دریافت لینک ساب</button></div>'+
         (cfg.httpsSubUrl ? '<div style="margin-top:6px;font-size:0.72rem;direction:ltr;text-align:left;color:#86efac;word-break:break-all;font-family:monospace">'+cfg.httpsSubUrl+'</div>' : '')+
         '</div>';
     });
@@ -290,33 +306,15 @@ PersistentKeepalive = ${KEEP_ALIVE}`;
 
   function buildSubPageHtml(cfg) {
     var on = isActive(cfg);
-    var nameStr = String(cfg.name || "گیمینگ سبحان");
+    var nameStr = String(cfg.name || "ZAKI-Gaming");
     var totalGB = Number(cfg.gb)||0;
     var confData = on ? (cfg.confText || "") : "";
-    var statusTxt = on ? "فعال" : "غیرفعال";
-    
-    // استفاده از سرویس استاندارد و تضمینی QR Server برای تولید بارکد کاملاً قابل اسکن
-    var qrApiUrl = "https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=" + encodeURIComponent(confData);
-    
-    return '<!DOCTYPE html><html lang="fa" dir="rtl"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>'+
-      '<title>بارکد کانفیگ | '+nameStr.replace(/</g,"")+'</title>'+
-      '<style>'+
-      '*{box-sizing:border-box;margin:0;padding:0}body{font-family:Tahoma,Arial,sans-serif;background:#05080f;color:#e8e0f0;padding:14px;text-align:center}'+
-      '.page{max-width:400px;margin:0 auto}.card{background:#0c1222;border:1px solid #06b6d4;border-radius:16px;padding:16px;margin-bottom:12px;text-align:right}'+
-      '.row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05)}.lbl{color:#38bdf8;font-size:13px}.val{color:#f3e8ff;font-weight:700}'+
-      '.conf{background:#05080f;border-radius:12px;padding:10px;font-family:monospace;font-size:11px;direction:ltr;text-align:left;max-height:180px;overflow:auto;color:#38bdf8;margin-bottom:12px;white-space:pre-wrap;word-break:break-all}'+
-      '.qr-box{background:#fff;border-radius:16px;padding:16px;display:inline-block;margin:10px 0}'+
-      '.btn{display:block;width:100%;padding:14px;border:none;border-radius:28px;background:#06b6d4;color:#000;font-weight:800;cursor:pointer;margin:8px 0;font-family:inherit}'+
-      '.owner{color:#38bdf8;font-weight:700;margin:6px 0}</style></head><body><div class="page">'+
-      '<h2>⚡ اسکن بارکد در وایرگارد</h2><p class="owner">مالک: سبحان</p>'+
-      '<div class="card">'+
-      '<div class="row"><span class="lbl">نام کانفیگ</span><span class="val">'+nameStr+'</span></div>'+
-      '<div class="row"><span class="lbl">حجم</span><span class="val">'+totalGB+' GB</span></div>'+
-      '<div class="row"><span class="lbl">وضعیت</span><span class="val" style="color:'+(on?'#86efac':'#fca5a5')+';">'+statusTxt+'</span></div></div>'+
-      (on?'<div class="qr-box"><img src="'+qrApiUrl+'" width="220" height="220" alt="QR Code"/></div><p style="font-size:12px;color:#94a3b8;margin-bottom:10px">با دوربین اپلیکیشن WireGuard این بارکد را اسکن کنید</p>':'<div style="padding:40px;color:#fca5a5">کانفیگ غیرفعال است</div>')+
-      '<div class="conf">'+(confData||"غیرفعال")+'</div>'+
-      (on?'<button class="btn" onclick="navigator.clipboard.writeText(`'+confData+'`);alert(`متن کانفیگ کپی شد! در وایرگارد Create from clipboard را بزنید`)">📋 کپی متن کانفیگ</button>':'')+
-      '</div></body></html>';
+    return '<!DOCTYPE html><html lang="fa" dir="rtl"><head><meta charset="UTF-8"/><title>ساب | '+nameStr.replace(/</g,"")+'</title><style>'+
+      'body{font-family:Tahoma;background:#020617;color:#e2e8f0;padding:20px;max-width:420px;margin:0 auto}'+
+      '.card{background:#0f172a;border:1px solid #f59e0b;border-radius:12px;padding:16px;margin-bottom:12px}'+
+      '.conf{background:#020617;border-radius:8px;padding:12px;font-family:monospace;font-size:11px;direction:ltr;text-align:left;color:#38bdf8;white-space:pre-wrap;word-break:break-all}'+
+      '</style></head><body><h2>𖤍 ZAKI GAMING</h2><div class="card"><p>نام: '+nameStr+'</p><p>حجم: '+totalGB+' GB</p></div>'+
+      '<div class="conf">'+(confData||"غیرفعال").replace(/</g,"&lt;")+'</div></body></html>';
   }
 
   async function uploadHtml(bodyHtml) {
@@ -331,7 +329,7 @@ PersistentKeepalive = ${KEEP_ALIVE}`;
   async function createSubFor(i) {
     var cfg = CONFIGS[i];
     if (!cfg) return;
-    toast("⏳ ساخت صفحه بارکد...");
+    toast("⏳ ساخت لینک ساب...");
     var body = buildSubPageHtml(cfg);
     var url = await uploadHtml(body);
     if (url) {
@@ -340,35 +338,35 @@ PersistentKeepalive = ${KEEP_ALIVE}`;
       save();
       var el = document.getElementById("subHttps");
       if (el) el.value = url;
-      window.open(url, "_blank");
-      toast("✅ صفحه بارکد ساخته شد و باز شد");
+      copyText(url);
+      toast("✅ لینک ساب ساخته و کپی شد");
       renderSub(); renderDash(); renderList();
     } else {
-      toast("⚠ خطا در ارتباط با هاست بارکد");
+      window.open(URL.createObjectURL(new Blob([body],{type:"text/html;charset=utf-8"})), "_blank");
+      toast("⚠ خطا در هاست آنلاین — صفحه محلی باز شد");
     }
   }
 
   function createConfig() {
-    var total = Number(PANEL.totalGB)||10000;
+    var total = Number(PANEL.totalGB)||500;
     var rem = Math.max(0, total - (Number(CONSUMED)||0));
-    if (rem <= 0) { toast("⛔ حجم کل پنل تمام شده است"); return; }
-    var days = parseInt(document.getElementById("cfgDays").value,10)||30;
+    if (rem <= 0) { toast("⛔ حجم پنل تمام شده"); return; }
+    var days = parseInt(document.getElementById("cfgDays").value,10)||500;
     var gb = parseInt(document.getElementById("cfgGB").value,10)||50;
     if (gb > rem) { gb = rem; }
     var name = (document.getElementById("cfgName").value||"").trim();
-    if (!name) name = "Gaming-Sobhan-"+days+"d";
+    if (!name) name = "ZAKI-Gaming-"+days+"روزه-"+gb+"گیگ";
     var built = buildConf(name, days, gb);
     CONFIGS.unshift({
-      id: "cfg_"+Date.now().toString(36), name:name, days:days, gb:gb, usedGB:0,
-      endpoint: built.endpoint, dns: built.dns, confText: built.conf, privateKey: built.privateKey,
-      createdAt: new Date().toISOString(), expiresAt: new Date(Date.now()+days*86400000).toISOString(), inSub: true, httpsSubUrl: null
+      id: "cfg_"+Date.now().toString(36), name: name, days: days, gb: gb, usedGB: 0,
+      confText: built.conf, createdAt: new Date().toISOString(), expiresAt: new Date(Date.now()+days*86400000).toISOString(), inSub: true, httpsSubUrl: null
     });
     CONSUMED = (Number(CONSUMED)||0) + gb;
     LAST_SUB_URL = "";
     save();
     renderList(); renderDash(); renderSub();
-    downloadText(built.conf, name + ".conf");
-    toast("✅ کانفیگ ساخته و فایل دانلود شد");
+    downloadText(built.conf, name.replace(/[\\/:*?"<>|]+/g,"_").replace(/\s+/g,"_")+".conf");
+    toast("✅ کانفیگ گیمینگ ساخته و دانلود شد");
     document.getElementById("cfgName").value = "";
     switchTab("configs");
   }
@@ -377,26 +375,17 @@ PersistentKeepalive = ${KEEP_ALIVE}`;
     var cfg = CONFIGS[i];
     if (!cfg) return;
     if (a === "dl") {
-      if (!isActive(cfg)) { toast("⛔ غیرفعال است"); return; }
-      downloadText(cfg.confText, (cfg.name||"config") + ".conf");
-      toast("⬇️ فایل دانلود شد");
+      downloadText(cfg.confText, (cfg.name||"config").replace(/\s+/g,"_")+".conf");
+      toast("⬇️ دانلود شد");
     } else if (a === "copy") {
-      if (!isActive(cfg)) { toast("⛔ غیرفعال است"); return; }
       copyText(cfg.confText||"");
     } else if (a === "toggle") {
       cfg.inSub = !(cfg.inSub !== false);
-      cfg.httpsSubUrl = null; LAST_SUB_URL = "";
       save(); renderAll();
       toast(cfg.inSub!==false?"✅ فعال شد":"⏸ غیرفعال شد");
-    } else if (a === "reset") {
-      if (!confirm("آپدیت کانفیگ؟")) return;
-      var built = buildConf(cfg.name, cfg.days, cfg.gb);
-      cfg.confText = built.conf;
-      save(); renderAll(); toast("🔄 آپدیت شد");
     } else if (a === "del") {
       if (!confirm("حذف کانفیگ؟")) return;
-      CONFIGS.splice(i,1); LAST_SUB_URL = "";
-      save(); renderAll(); toast("🗑️ حذف شد");
+      CONFIGS.splice(i,1); save(); renderAll(); toast("🗑️ حذف شد");
     } else if (a === "sub") {
       createSubFor(i);
     }
@@ -404,7 +393,7 @@ PersistentKeepalive = ${KEEP_ALIVE}`;
 
   function renderAll() { renderList(); renderDash(); renderSub(); updateStatus(); }
 
-  document.getElementById("btnCreate").addEventListener("click", function(e){ e.preventDefault(); try{ createConfig(); }catch(err){ toast("خطا: "+err.message); } });
+  document.getElementById("btnCreate").addEventListener("click", function(e){ e.preventDefault(); createConfig(); });
   document.getElementById("btnSubLatest").addEventListener("click", function(){ if(!CONFIGS.length){toast("کانفیگی نیست");return;} createSubFor(0); });
   document.getElementById("btnCopySub").addEventListener("click", function(){
     var v = document.getElementById("subHttps").value;
@@ -413,12 +402,19 @@ PersistentKeepalive = ${KEEP_ALIVE}`;
   });
   document.getElementById("btnOpenSub").addEventListener("click", function(){
     var v = document.getElementById("subHttps").value;
-    if (v) window.open(v, "_blank"); else toast("لینک موجود نیست");
+    if (v) window.open(v, "_blank");
+    else toast("لینک ساب موجود نیست");
+  });
+
+  document.body.addEventListener("click", function(e){
+    var btn = e.target.closest("button[data-a]");
+    if (!btn || btn.disabled) return;
+    handleAction(btn.getAttribute("data-a"), parseInt(btn.getAttribute("data-i"), 10));
   });
 
   load();
   renderAll();
-  toast("⚡ پنل به‌روزرسانی شد!");
+  toast("پنل گیمینگ ZAKI آماده شد!");
 })();
 </script>
 </body>
