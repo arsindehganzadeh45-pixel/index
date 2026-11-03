@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>پنل اختصاصی | WireGuard Game & Web</title>
+<title>پنل 🇹🇷 ترکیه تانل | WireGuard Gaming</title>
 <style>
-:root{--accent:#38bdf8;--accent2:#8b5cf6;--card:rgba(12,18,34,0.95);--text:#e2e8f0;--muted:#94a3b8;--border:#38bdf855}
+:root{--accent:#f59e0b;--accent2:#ef4444;--card:rgba(12,18,34,0.95);--text:#e2e8f0;--muted:#94a3b8;--border:#f59e0b55}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Tahoma,"Segoe UI",sans-serif;background:linear-gradient(145deg,#05080f,#0c1222);color:var(--text);min-height:100vh;line-height:1.65;padding:14px}
 .wrap{max-width:780px;margin:0 auto}
 header{text-align:center;padding:18px;background:var(--card);border:1px solid var(--border);border-radius:16px;margin-bottom:12px}
-header h1{font-size:1.3rem;background:linear-gradient(90deg,var(--accent),#60a5fa,var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+header h1{font-size:1.3rem;background:linear-gradient(90deg,var(--accent),#fb923c,var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .badge{display:inline-block;margin-top:8px;padding:4px 12px;border:1px solid var(--accent);border-radius:999px;font-size:0.75rem;color:var(--accent)}
 .nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:12px}
 .nav button{padding:10px 16px;border:1px solid var(--border);background:var(--card);color:var(--text);border-radius:12px;cursor:pointer;font-weight:700;font-size:0.88rem;font-family:inherit}
-.nav button.active,.nav button:hover{background:linear-gradient(135deg,#38bdf833,#8b5cf628);border-color:var(--accent)}
+.nav button.active,.nav button:hover{background:linear-gradient(135deg,#f59e0b33,#ef444428);border-color:var(--accent)}
 .tab{display:none}.tab.active{display:block}
 .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:12px}
 .card h2{font-size:1.05rem;color:var(--accent);margin-bottom:10px}
@@ -38,16 +38,16 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
 .toast.show{transform:translateX(-50%) translateY(0);opacity:1}
 .quota{height:8px;border-radius:999px;background:#0f172a;overflow:hidden;margin-top:6px;border:1px solid rgba(255,255,255,0.08)}
 .quota>div{height:100%;border-radius:999px}
-.owner{color:#a78bfa;font-size:0.85rem;font-weight:700}
-.note{font-size:0.78rem;color:var(--muted);margin-top:10px;padding:10px;background:rgba(56,189,248,0.1);border-radius:8px;border-right:3px solid #38bdf8}
+.owner{color:#fca5a5;font-size:0.85rem;font-weight:700}
+.note{font-size:0.78rem;color:var(--muted);margin-top:10px;padding:10px;background:rgba(245,158,11,0.1);border-radius:8px;border-right:3px solid #f59e0b}
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <h1>🛡️ پنل اختصاصی | گیم و وبگردی</h1>
-    <p style="color:var(--muted);margin-top:6px;font-size:0.9rem">متصل به کانفیگ اصلی | WireGuard | ظرفیت کل: ۱۰,۰۰۰ گیگابایت</p>
-    <span class="badge">مدیریت ساب‌سکرپشن</span>
+    <h1>🛡️ پنل 🇹🇷 ترکیه تانل (گیمینگ)</h1>
+    <p style="color:var(--muted);margin-top:6px;font-size:0.9rem">WireGuard Gaming Panel | ظرفیت کل: ۳۰۰,۰۰۰ گیگابایت</p>
+    <span class="badge">مخصوص پابجی و بازی‌های آنلاین</span>
   </header>
 
   <div class="nav">
@@ -59,7 +59,7 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
 
   <div id="tab-dash" class="tab active">
     <div class="card">
-      <h2>📊 داشبورد این پنل</h2>
+      <h2>📊 داشبورد پنل گیمینگ</h2>
       <div class="meta" id="statusMeta">...</div>
       <div class="quota"><div id="quotaFill" style="width:0%"></div></div>
       <div id="dashList" style="margin-top:12px"></div>
@@ -68,14 +68,14 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
 
   <div id="tab-create" class="tab">
     <div class="card">
-      <h2>➕ ساخت کانفیگ جدید</h2>
+      <h2>➕ ساخت کانفیگ جدید گیمینگ</h2>
       <div class="row">
-        <div><label>روز اعتبار</label><input type="number" id="cfgDays" min="1" max="365" value="30"/></div>
+        <div><label>روز اعتبار</label><input type="number" id="cfgDays" min="1" max="365" value="60"/></div>
         <div><label>کاربر</label><input type="number" id="cfgUsers" min="1" max="50" value="1"/></div>
-        <div><label>حجم (گیگ)</label><input type="number" id="cfgGB" min="1" max="10000" value="100"/></div>
+        <div><label>حجم (گیگ)</label><input type="number" id="cfgGB" min="1" max="300000" value="100"/></div>
       </div>
       <label>نام (اختیاری)</label>
-      <input type="text" id="cfgName" placeholder="گیمینگ / وبگردی"/>
+      <input type="text" id="cfgName" placeholder="گیمینگ ترکیه ویژه"/>
       <div style="margin-top:12px"><button type="button" class="btn btn-p" id="btnCreate">✨ ساخت + دانلود</button></div>
     </div>
   </div>
@@ -100,7 +100,7 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
         <button type="button" class="btn btn-o" id="btnOpenSub">🌐 باز کردن صفحه ساب</button>
         <button type="button" class="btn btn-o" id="btnCopyB64">📋 کپی Base64</button>
       </div>
-      <div class="note">بعد از هر تغییر وضعیت یا مصرف، دوباره لینک بسازید تا صفحه ساب به‌روز باشد.</div>
+      <div class="note">بعد از هر تغییر وضعیت یا مصرف، دوباره لینک بسازید تا صفحه ساب به‌روز باشد. REX WireGuard Panel</div>
       <div id="subCfgList" style="margin-top:14px"></div>
     </div>
   </div>
@@ -109,14 +109,14 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
 
 <script>
 (function(){
-  var PANEL = {"id":"pnl_real_game_web","countryCode":"server","countryName":"سرور اصلی (گیم و وب)","flag":"🟢","city":"","ipType":"ipv4","dnsMode":"fixed","dnsCount":2,"totalGB":10000,"endpoint":"mh.appmetrics.shop:51820"};
-  var SERVER_PUBLIC_KEY = "yRG9nBvR02RGtDS32Ld9nd0R/TD5Bv+fF0dM2CW8dyI=";
-  var SOURCE_PRIVATE_KEY = "2ESQpMTxA+KrGO+R8bBH3faBlLgJNl0Hvla1bUf0IXM=";
-  var SOURCE_ADDRESS = "10.67.1.74/20";
-  var SOURCE_DNS = "1.1.1.1, 1.0.0.1";
+  var PANEL = {"id":"pnl_turkey_gaming","countryCode":"tr","countryName":"ترکیه تانل","flag":"🇹🇷","city":"","ipType":"ipv4","dnsMode":"fixed","dnsCount":2,"totalGB":300000,"endpoint":"85.96.79.206:30349"};
+  var SERVER_PUBLIC_KEY = "+EkxYkul8KACz8QHNzn/6wYEFeiQY2lfiTLKrymU6EQ=";
+  var SOURCE_PRIVATE_KEY = "GK/YtfvFwonyVOZ3wRET/Rs7XkZ89KgB+vT6vzhOK04=";
+  var SOURCE_ADDRESS = "10.66.47.163/32";
+  var SOURCE_DNS = "88.250.112.114, 8.8.8.8";
   var SOURCE_MTU = 1280;
-  var ENDPOINTS = ["mh.appmetrics.shop:51820"];
-  var STORAGE_KEY = "wg_game_web_pnl_storage_10k_gb";
+  var ENDPOINTS = ["85.96.79.206:30349"];
+  var STORAGE_KEY = "wg_turkey_gaming_panel_300k_gb";
   var CONFIGS = [];
   var CONSUMED = 0;
   var LAST_SUB_URL = "";
@@ -183,10 +183,10 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
   }
 
   function buildConf(name, days, users, gb) {
-    var ep = "mh.appmetrics.shop:51820", dns = SOURCE_DNS;
+    var ep = "85.96.79.206:30349", dns = SOURCE_DNS;
     var safe = String(name).replace(/[^\x20-\x7E]/g,"_").slice(0,40);
     var conf = [
-      "# WireGuard Game & Web Config",
+      "# REX WireGuard Panel - Gaming",
       "# Name: "+safe,
       "# Volume: "+gb+"GB",
       "# Time: "+days+" days",
@@ -200,9 +200,9 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
       "",
       "[Peer]",
       "PublicKey = "+SERVER_PUBLIC_KEY,
-      "AllowedIPs = 0.0.0.0/0, ::/0",
+      "AllowedIPs = ::/0",
       "Endpoint = "+ep,
-      "PersistentKeepalive = 25",
+      "PersistentKeepalive = 12",
       ""
     ].join("\n");
     return { conf: conf, endpoint: ep, dns: dns, privateKey: SOURCE_PRIVATE_KEY };
@@ -226,18 +226,18 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
   }
 
   function updateStatus() {
-    var total = Number(PANEL.totalGB)||10000;
+    var total = Number(PANEL.totalGB)||300000;
     var used = Math.max(0, Number(CONSUMED)||0);
     var rem = Math.max(0, total - used);
     var act = CONFIGS.filter(isActive).length;
     document.getElementById("statusMeta").innerHTML =
-      "سرور: "+PANEL.flag+" "+PANEL.countryName+"<br>"+
-      "حجم کل: <strong style='color:#86efac'>"+used+"</strong> / "+total+" GB — باقی‌مانده: <strong>"+rem+"</strong> GB<br>"+
-      "کانفیگ فعال: <strong>"+act+"</strong> / "+CONFIGS.length;
+      "لوکیشن: "+PANEL.flag+" "+PANEL.countryName+" (مخصوص گیمینگ)<br>"+
+      "حجم کل پنل: <strong style='color:#86efac'>"+used+"</strong> / "+total+" GB — باقی‌مانده: <strong>"+rem+"</strong> GB<br>"+
+      "کانفیگ فعال: <strong>"+act+"</strong> / "+CONFIGS.length+"<br><span class='owner'>REX WireGuard Panel</span>";
     var pct = Math.min(100, Math.round((used/total)*100));
     var fill = document.getElementById("quotaFill");
     fill.style.width = pct+"%";
-    fill.style.background = pct>=95?"#ef4444":pct>=70?"#f59e0b":"#38bdf8";
+    fill.style.background = pct>=95?"#ef4444":pct>=70?"#f59e0b":"#f59e0b";
     var btn = document.getElementById("btnCreate");
     if (btn) btn.disabled = rem <= 0;
   }
@@ -263,7 +263,7 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
       var left = remainingDays(cfg);
       var st = on ? "فعال" : (cfg.inSub===false?"غیرفعال":(left<=0?"منقضی":"حجم تمام"));
       html += '<div class="cfg" style="opacity:'+(on?1:0.55)+'"><strong>🎮 '+(cfg.name||("#"+(i+1)))+'</strong> <span style="font-size:0.75rem;color:'+(on?"#86efac":"#fca5a5")+'">● '+st+'</span><br>'+
-        '<span style="font-size:0.82rem;color:var(--muted)">'+(cfg.days||0)+' روز • باقی: '+left+' • '+(cfg.gb||0)+' گیگ</span>'+cfgButtons(cfg,i,on)+'</div>';
+        '<span style="font-size:0.82rem;color:var(--muted)">'+(cfg.days||0)+' روز • باقی: '+left+' روز • '+(cfg.gb||0)+' گیگ</span>'+cfgButtons(cfg,i,on)+'</div>';
     });
     list.innerHTML = html;
   }
@@ -301,7 +301,7 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
 
   function buildSubPageHtml(cfg) {
     var on = isActive(cfg);
-    var nameStr = String(cfg.name || "گیم و وبگردی");
+    var nameStr = String(cfg.name || "گیمینگ ترکیه");
     var totalGB = Number(cfg.gb)||0;
     var confData = on ? (cfg.confText || "") : "";
     var statusTxt = on ? "فعال" : "غیرفعال";
@@ -309,24 +309,24 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
     var qrUrl = "https://api.qrserver.com/v1/create-qr-code/?size=240x240&margin=8&data=" + encodeURIComponent(confData ? confData.slice(0,1200) : "INACTIVE");
     return '<!DOCTYPE html><html lang="fa" dir="rtl"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>'+
       '<title>ساب | '+nameStr.replace(/</g,"")+'</title><style>'+
-      '*{box-sizing:border-box;margin:0;padding:0}body{font-family:Tahoma,Arial,sans-serif;background:linear-gradient(165deg,#0a1020,#1e293b);color:#e8e0f0;padding:14px;min-height:100%}'+
-      '.page{max-width:420px;margin:0 auto}.card{background:rgba(15,23,42,.95);border:1px solid rgba(56,189,248,.3);border-radius:16px;overflow:hidden;margin-bottom:12px}'+
-      '.row{display:flex;justify-content:space-between;padding:13px 16px;border-bottom:1px solid rgba(255,255,255,.06)}.lbl{color:#38bdf8;font-size:13px}.val{color:#f3e8ff;font-weight:700;direction:ltr;text-align:left;max-width:58%;word-break:break-all}'+
+      '*{box-sizing:border-box;margin:0;padding:0}body{font-family:Tahoma,Arial,sans-serif;background:linear-gradient(165deg,#1a0f2e,#2a1548);color:#e8e0f0;padding:14px;min-height:100%}'+
+      '.page{max-width:420px;margin:0 auto}.card{background:rgba(40,25,70,.95);border:1px solid rgba(245,158,11,.3);border-radius:16px;overflow:hidden;margin-bottom:12px}'+
+      '.row{display:flex;justify-content:space-between;padding:13px 16px;border-bottom:1px solid rgba(255,255,255,.06)}.lbl{color:#f59e0b;font-size:13px}.val{color:#f3e8ff;font-weight:700;direction:ltr;text-align:left;max-width:58%;word-break:break-all}'+
       '.pill{padding:3px 10px;border-radius:999px;font-size:12px;font-weight:700}.ok{background:rgba(34,197,94,.2);color:#86efac;border:1px solid #22c55e}.off{background:rgba(239,68,68,.2);color:#fca5a5;border:1px solid #ef4444}'+
-      '.btn{display:block;width:100%;padding:14px;border:none;border-radius:28px;background:linear-gradient(135deg,#38bdf8,#8b5cf6);color:#05080f;font-weight:800;cursor:pointer;margin:12px 0;font-family:inherit}'+
-      '.btn:disabled{background:#4b5563;cursor:not-allowed}.qr{background:#fff;border-radius:16px;padding:16px;text-align:center;margin:12px 0}.conf{background:rgba(10,16,32,.95);border-radius:12px;padding:12px;font-family:monospace;font-size:11px;direction:ltr;text-align:left;max-height:260px;overflow:auto;color:#38bdf8;white-space:pre-wrap;word-break:break-all}'+
-      '.owner{text-align:center;color:#94a3b8;font-weight:700;margin:8px 0}</style></head><body><div class="page">'+
-      '<h2 style="text-align:center;color:#38bdf8">📋 اطلاعات کانفیگ گیم و وب</h2>'+
+      '.btn{display:block;width:100%;padding:14px;border:none;border-radius:28px;background:linear-gradient(135deg,#f59e0b,#ef4444);color:#05080f;font-weight:800;cursor:pointer;margin:12px 0;font-family:inherit}'+
+      '.btn:disabled{background:#4b5563;cursor:not-allowed}.qr{background:#fff;border-radius:16px;padding:16px;text-align:center;margin:12px 0}.conf{background:rgba(15,8,30,.95);border-radius:12px;padding:12px;font-family:monospace;font-size:11px;direction:ltr;text-align:left;max-height:260px;overflow:auto;color:#fcd34d;white-space:pre-wrap;word-break:break-all}'+
+      '.owner{text-align:center;color:#fca5a5;font-weight:700;margin:8px 0}</style></head><body><div class="page">'+
+      '<h2 style="text-align:center;color:#f59e0b">📋 کانفیگ گیمینگ ترکیه</h2><p class="owner">REX WireGuard Panel</p>'+
       '<div class="card">'+
       '<div class="row"><span class="lbl">نام</span><span class="val">'+nameStr.replace(/</g,"")+'</span></div>'+
       '<div class="row"><span class="lbl">شناسه</span><span class="val">'+subId+'</span></div>'+
       '<div class="row"><span class="lbl">حجم</span><span class="val">'+totalGB+' GB</span></div>'+
-      '<div class="row"><span class="lbl">سرور</span><span class="val">mh.appmetrics.shop:51820</span></div>'+
+      '<div class="row"><span class="lbl">لوکیشن</span><span class="val">🇹🇷 ترکیه تانل (گیم)</span></div>'+
       '<div class="row"><span class="lbl">وضعیت</span><span class="val"><span class="pill '+(on?"ok":"off")+'">'+statusTxt+'</span></span></div></div>'+
       '<div class="conf">'+(confData||"⛔ کانفیگ غیرفعال").replace(/</g,"&lt;")+'</div>'+
-      (on?'<button class="btn" onclick="var c='+JSON.stringify(confData)+';var a=document.createElement(\'a\');a.href=URL.createObjectURL(new Blob([c]));a.download=\'config.conf\';a.click()">⬇️ دانلود</button>':'<button class="btn" disabled>⛔ دانلود غیرفعال</button>')+
-      '<div class="qr">'+(on?'<img src="'+qrUrl+'" width="220" height="220"/>':'<div style="padding:80px;color:#38bdf8">⛔ غیرفعال</div>')+'</div>'+
-      '<p class="owner">WireGuard Game & Web Panel</p></div></body></html>';
+      (on?'<button class="btn" onclick="var c='+JSON.stringify(confData)+';var a=document.createElement(\'a\');a.href=URL.createObjectURL(new Blob([c]));a.download=\'gaming.conf\';a.click()">⬇️ دانلود کانفیگ گیم</button>':'<button class="btn" disabled>⛔ دانلود غیرفعال</button>')+
+      '<div class="qr">'+(on?'<img src="'+qrUrl+'" width="220" height="220"/>':'<div style="padding:80px;color:#f59e0b">⛔ غیرفعال</div>')+'</div>'+
+      '<p class="owner">🇹🇷 ترکیه تانل • REX WireGuard Panel</p></div></body></html>';
   }
 
   function buildAllSubPageHtml() {
@@ -334,13 +334,14 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
     if (!list.length) return null;
     var cards = list.map(function(cfg, idx) {
       return '<div style="background:#fff;border-radius:14px;padding:14px;margin-bottom:14px;color:#111">'+
-        '<h3>'+(cfg.name||("#"+(idx+1)))+'</h3><p style="color:#16a34a;font-weight:700">● فعال</p>'+
+        '<h3>'+(cfg.name||("#"+(idx+1)))+'</h3><p style="color:#16a34a;font-weight:700">● فعال (گیم)</p>'+
         '<p>حجم: '+(cfg.gb||0)+' GB | روز: '+(cfg.days||0)+'</p>'+
+        '<p style="color:#ef4444;font-weight:700">REX WireGuard Panel</p>'+
         '<pre style="font-size:11px;overflow:auto;max-height:180px;background:#f5f5f5;padding:8px;direction:ltr;text-align:left">'+(cfg.confText||"").replace(/</g,"&lt;")+'</pre></div>';
     }).join("");
-    return '<!DOCTYPE html><html lang="fa" dir="rtl"><head><meta charset="UTF-8"/><title>ساب | Game & Web</title></head>'+
+    return '<!DOCTYPE html><html lang="fa" dir="rtl"><head><meta charset="UTF-8"/><title>ساب | ترکیه تانل</title></head>'+
       '<body style="font-family:Tahoma;background:#f0f2f5;padding:16px;max-width:480px;margin:0 auto">'+
-      '<h2>گیم و وبگردی — ساب همه فعال‌ها</h2>'+cards+'</body></html>';
+      '<h2>🇹🇷 ترکیه تانل — ساب همه فعال‌ها</h2><p style="color:#ef4444;font-weight:700">REX WireGuard Panel</p>'+cards+'</body></html>';
   }
 
   async function uploadHtml(bodyHtml) {
@@ -400,15 +401,15 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
   }
 
   function createConfig() {
-    var total = Number(PANEL.totalGB)||10000;
+    var total = Number(PANEL.totalGB)||300000;
     var rem = Math.max(0, total - (Number(CONSUMED)||0));
     if (rem <= 0) { toast("⛔ حجم پنل تمام شده"); return; }
-    var days = parseInt(document.getElementById("cfgDays").value,10)||30;
+    var days = parseInt(document.getElementById("cfgDays").value,10)||60;
     var users = parseInt(document.getElementById("cfgUsers").value,10)||1;
     var gb = parseInt(document.getElementById("cfgGB").value,10)||100;
     if (gb > rem) { gb = rem; toast("حجم محدود به "+rem+" GB"); }
     var name = (document.getElementById("cfgName").value||"").trim();
-    if (!name) name = "گیم-وب-"+days+"روزه-"+gb+"گیگ";
+    if (!name) name = "گیمینگ-ترکیه-"+days+"روزه-"+gb+"گیگ";
     var built = buildConf(name, days, users, gb);
     CONFIGS.unshift({
       id: "cfg_"+Date.now().toString(36), name:name, days:days, users:users, gb:gb, usedGB:0,
@@ -420,7 +421,7 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
     save();
     renderList(); renderDash(); renderSub();
     downloadText(built.conf, name.replace(/[\\/:*?"<>|]+/g,"_").replace(/\s+/g,"_").slice(0,60)+".conf");
-    toast("✅ کانفیگ ساخته و دانلود شد");
+    toast("✅ کانفیگ گیم ساخته و دانلود شد");
     document.getElementById("cfgName").value = "";
     switchTab("configs");
   }
@@ -498,7 +499,7 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
 
   load();
   renderAll();
-  toast("پنل با حجم ۱۰,۰۰۰ گیگ آماده است");
+  toast("پنل ترکیه تانل (مخصوص گیم) آماده است — ۳۰۰,۰۰۰ گیگابایت");
 })();
 </script>
 </body>
